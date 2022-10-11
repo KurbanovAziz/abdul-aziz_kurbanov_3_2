@@ -9,7 +9,7 @@ public class Main {
                 System.out.println(bankAccount.getAmount());
 
             } catch (LimitException e) {
-                System.out.println(e.getMessage() + e.getRemainingAmount());
+                System.out.println(bankAccount.getAmount() - bankAccount.getAmount());
                 break;
             }
 

@@ -10,9 +10,11 @@ public class BankAccount {
     }
 
     public void withDraw(int sum) throws LimitException {
-        amount -= sum;
         if (sum > amount) {
-            throw new LimitException("Вы сняли весь остаток: " + amount + "\nТеперь ваш баланс равен: ", amount -= amount);
+            throw new LimitException("Вы сняли весь остаток: " + amount +
+                    "\nТеперь ваш баланс равен: ", amount -= amount);
+        }else {
+            amount -= sum;
         }
     }
 }
