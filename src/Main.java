@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         BankAccount bankAccount = new BankAccount();
@@ -9,14 +11,13 @@ public class Main {
                 System.out.println(bankAccount.getAmount());
 
             } catch (LimitException e) {
-                System.out.println(bankAccount.getAmount() - bankAccount.getAmount());
+                try {
+                    bankAccount.withDraw(6000);
+                } catch (LimitException ex) {
+                    System.out.println(ex.getMessage()+ ex.getRemainingAmount());
+                }
                 break;
             }
-
-
         }
-
-
-
     }
 }

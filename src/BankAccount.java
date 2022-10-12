@@ -9,10 +9,9 @@ public class BankAccount {
         amount = sum;
     }
 
-    public void withDraw(int sum) throws LimitException {
+    public void withDraw(Integer sum) throws LimitException {
         if (sum > amount) {
-            throw new LimitException("Вы сняли весь остаток: " + amount +
-                    "\nТеперь ваш баланс равен: ", amount -= amount);
+            throw new LimitException("Ваш баланс: ", amount -= amount);
         }else {
             amount -= sum;
         }
