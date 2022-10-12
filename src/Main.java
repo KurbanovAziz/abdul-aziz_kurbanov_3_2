@@ -12,7 +12,8 @@ public class Main {
 
             } catch (LimitException e) {
                 try {
-                    bankAccount.withDraw(6000);
+                    bankAccount.withDraw(bankAccount.hashCode());
+
                 } catch (LimitException ex) {
                     System.out.println(ex.getMessage()+ ex.getRemainingAmount());
                 }
